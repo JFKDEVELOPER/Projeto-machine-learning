@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Lê o arquivo original
-df = pd.read_csv("data.csv", sep=';', encoding='latin1')
+df = pd.read_csv("Base.csv", sep=';', encoding='latin1')
 
 # Converte para NumPy array
 data = df.values
@@ -26,13 +26,11 @@ data[:, 5] = label_encoder_disciplina.fit_transform(data[:, 5])
 data[:, 6] = label_encoder_area.fit_transform(data[:, 6])
 data[:, 7] = label_encoder_conceitos.fit_transform(data[:, 7])
 
-print("Depois da codificação (linha 0):", data[0])
 
 # Converte de volta para DataFrame usando os nomes originais das colunas
 df_processado = pd.DataFrame(data, columns=df.columns)
 
-
 # Salva o DataFrame processado em CSV (sem o índice)
-df_processado.to_csv("base_processada.csv", index=False)
+df_processado.to_csv("Base_LabelEncoder.csv", index=False)
 
 
