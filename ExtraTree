@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import ExtraTreesClassifier
 import numpy as np
 
-base = pd.read_csv('Base_LabelEncoder.csv')
+base = pd.read_csv('BaseLabelEncoder.csv')
 
 
 
@@ -36,6 +36,6 @@ print(colunas_importantes)
 
 
 base_extratree = base.loc[:, colunas_importantes.tolist() + ['Type of Answer']]
-base_extratree.to_csv('base_extratree.csv', index=False)
+base_extratree.to_csv('BaseExtraTree.csv', index=False)
 
 
